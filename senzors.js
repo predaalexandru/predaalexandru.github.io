@@ -17,5 +17,5 @@ function ondevicemotion(event)
 	var gama = -Math.atan(ag.x / ag.z) * 180 / Math.PI;
 	var beta = Math.atan(ag.y / ag.z) * 180 / Math.PI;
 	
-	document.getElementById("id_acc_g").innerHTML ="Acc_g = " + Math.round(event.ag.x * 10) / 10 + " " + Math.round(event.ag.y * 10) / 10 + " " + Math.round(event.ag.z * 10) / 10 + "Gama = " + Math.round(gamma * 10) / 10 + " Beta = " + Math.round(beta * 10) / 10;		
+	document.getElementById("id_acc_g").innerHTML ="Acc_g = " + Math.round(ag.x * 10) / 10 + " " + Math.round(ag.y * 10) / 10 + " " + Math.round(ag.z * 10) / 10 + "Gama = " + Math.round(gamma * 10) / 10 + " Beta = " + Math.round(beta * 10) / 10;		
 }
