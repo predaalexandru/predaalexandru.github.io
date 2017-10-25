@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML="Logic level version 2017.10.25.0";
+document.getElementById("id_logic_level_version").innerHTML="Logic level version 2017.10.25.1";
 window.addEventListener('deviceorientation', ondeviceorientation);
 window.addEventListener('devicemotion', ondevicemotion);
 //-------------------------------------------------------
@@ -11,7 +11,13 @@ window.addEventListener('devicemotion', ondevicemotion);
 //-------------------------------------------------------
 function ondevicemotion(event)
 {
-	document.getElementById("id_acc").innerHTML = Math.round(event.acceleration.x * 10) / 10 + " " + Math.round(event.acceleration.y * 10) / 10 + " " + Math.round(event.acceleration.z * 10) / 10;
-	document.getElementById("id_acc_g").innerHTML = Math.round(event.accelerationIncludingGravity.x * 10) / 10 + " " + Math.round(event.accelerationIncludingGravity.y * 10) / 10 + " " + Math.round(event.accelerationIncludingGravity.z * 10) / 10;
+	document.getElementById("id_acc").innerHTML = "Acc = " + Math.round(event.acceleration.x * 10) / 10 + " " + Math.round(event.acceleration.y * 10) / 10 + " " + Math.round(event.acceleration.z * 10) / 10;
+	
+	var ag = event.accelerationIncludingGravity;
+	var x_incl = Math.atan(ag.x / ag.z);
+	var y_incl = Math.atan(ag.y / ag.z);
+	
+	document.getElementById("id_acc_g").innerHTML ="Acc_g = " + Math.round(event.ag.x * 10) / 10 + " " + Math.round(event.ag.y * 10) / 10 + " " + Math.round(event.ag.z * 10) / 10 + "Inclinare x = " + x_incl + "Inclinare y = " + y_incl ;
+	
 	
 }
