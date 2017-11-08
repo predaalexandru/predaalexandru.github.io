@@ -1,9 +1,8 @@
-document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.08.9";
+document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.08.10";
 
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
 var rect = canvas.getBoundingClientRect();
-
 canvas.addEventListener("touchstart", on_touch_start);
 canvas.addEventListener("touchmove", on_touch_move);
 canvas.addEventListener("touchend", on_touch_end);
@@ -14,7 +13,7 @@ function generate_random_color()
 {
 	var litere = "0123456789ABCDF"
 	var color = "#";
-	for( var i = 0; i < 6; i++)
+	for(var i = 0; i < 6; i++)
 		color += litere[Math.floor(Math.random() * 16)];
 	return color
 }
@@ -23,8 +22,8 @@ function on_touch_start(e)
 {
 	e.preventDefault();
 	var touches = e.changedTouches;
-	for ( var i = 0; i < touches.length; i++){
-		touch_id.push({id:touches[i].identifier, color:generate_random_color(), x:touches[i].pageX,  y:touches[i].pageY});
+	for (var i = 0; i < touches.length; i++){
+		touch_id.push({id:touches[i].identifier, color:generate_random_color(), x:touches[i].pageX, y:touches[i].pageY});
 		context.beginPath();
 		context.arc(touches[i].pageX - rect.left, touches[i].pageY - rect.top, 10, 0, 2 * Math.PI);
 		context.strokeStyle = touch_id[touch_id.length - 1].color;
@@ -38,7 +37,7 @@ function on_touch_move(e)
 {
 	e.preventDefault();
 	var touches = e.changedTouches;
-	for ( var i = 0; i < touches.length; i++){
+	for (var i = 0; i < touches.length; i++){
 		var color = "#FFFFFF";
 		var j;
 		for (j = 0; j < touch_id.length; j++)
@@ -47,7 +46,7 @@ function on_touch_move(e)
 				break;
 			}
 		context.beginPath();
-		context.moveTo(touch_id[j].x - rect_canvas.left, touch_id[j].y - rect_canvas.top);
+		context.moveTo(touch_id[j].x - rect.left, touch_id[j].y - rect.top);
 		context.lineWidth = 20;
 		context.lineTo(touches[i].pageX - rect.left, touches[i].pageY - rect.top);
 		context.arc(touches[i].pageX - rect.left, touches[i].pageY - rect.top, 10, 0, 2 * Math.PI);
@@ -59,20 +58,19 @@ function on_touch_move(e)
 		touch_id[j].y = touches[i].pageY;
 	}
 }
-//--------------------------------------------------------
+//--------------------------------------------------
 function on_touch_end(e)
 {
 	e.preventDefault();
 	var touches = e.changedTouches;
-	for ( var i = 0; i < touches.length; i++){
+	for (var i = 0; i < touches.length; i++){
 		var j;
 		for (j = 0; j < touch_id.length; j++)
 			if(touches[i].identifier == touch_id[j].id){
-				
+				color = touch_id[j].color;
 				break;
 			}
-		//trebuie sters touch_id[j];
-		touch_id.splice(j,1);
+		// trebuie sters touch_id[j]
+		touch_id.splice(j, 1);
 	}
 }
-//--------------------------------------------------------
