@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.08.5";
+document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.08.6";
 
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
@@ -13,7 +13,7 @@ function generate_random_color()
 {
 	var litere = "0123456789ABCDF"
 	var color = "#";
-	for(i = 0; i < 6; i++)
+	for( var i = 0; i < 6; i++)
 		color += litere[Math.floor(Math.random() * 16)];
 	return color
 }
@@ -21,7 +21,7 @@ function generate_random_color()
 function on_touch_start(e)
 {
 	var touches = e.changedTouches;
-	for (i = 0; i < touches.length; i++){
+	for ( var i = 0; i < touches.length; i++){
 		touch_id.push({id:touches[i].identifier, color:generate_random_color()});
 		context.beginPath();
 		context.arc(touches[i].pageX - rect.left, touches[i].pageY - rect.top, 10, 0, 2 * Math.PI);
@@ -35,9 +35,9 @@ function on_touch_start(e)
 function on_touch_move(e)
 {
 	var touches = e.changedTouches;
-	for (i = 0; i < touches.length; i++){
+	for ( var i = 0; i < touches.length; i++){
 		var color = "#FFFFFF";
-		for (j = 0; j < touch_id.length; j++)
+		for ( var j = 0; j < touch_id.length; j++)
 			if(touches[i].identifier == touch_id[j].id){
 				color = touch_id[j].color;
 				break;
