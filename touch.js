@@ -3,6 +3,7 @@ document.getElementById("id_logic_level_version").innerHTML = "Business level ve
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
 var rect = canvas.getBoundingClientRect();
+
 canvas.addEventListener("touchstart", on_touch_start);
 canvas.addEventListener("touchmove", on_touch_move);
 
@@ -49,3 +50,4 @@ function on_touch_move(e)
 		context.stroke();
 	}
 }
+//--------------------------------------------------------
