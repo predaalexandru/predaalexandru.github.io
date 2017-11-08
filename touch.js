@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.08.6";
+document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.08.7";
 
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
@@ -20,6 +20,7 @@ function generate_random_color()
 //--------------------------------------------------
 function on_touch_start(e)
 {
+	e.preventDefault();
 	var touches = e.changedTouches;
 	for ( var i = 0; i < touches.length; i++){
 		touch_id.push({id:touches[i].identifier, color:generate_random_color()});
@@ -34,6 +35,7 @@ function on_touch_start(e)
 //--------------------------------------------------
 function on_touch_move(e)
 {
+	e.preventDefault();
 	var touches = e.changedTouches;
 	for ( var i = 0; i < touches.length; i++){
 		var color = "#FFFFFF";
