@@ -2,7 +2,7 @@ document.getElementById("id_logic_level_version").innerHTML="Business level vers
 
 addEventListener("touchstart", on_touch_start);
 var svg = document.getElementById("id_svg");
-var rect_svg = canvas.getBoundingClientRect();
+var rect_svg = svg.getBoundingClientRect();
 
 //-----------------------------------------------------------
 function on_touch_start(e)
