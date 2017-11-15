@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.15.0";
+document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.15.1";
 
 
 var circle1 = document.getElementById("id_circle1");
@@ -13,6 +13,7 @@ var rect_svg = svg.getBoundingClientRect();
 //-------------------------------------------------------------
 function on_touch_move(e)
 {
+	e.preventDefault();
 	var touches = e.changedTouches;
 	for (var i=0; i < touches.length; i++) 
 	{
