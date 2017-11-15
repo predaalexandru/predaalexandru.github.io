@@ -1,10 +1,10 @@
 document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.15.1";
 
 
-var circle1 = document.getElementById("id_circle1");
+var circle = document.getElementById("id_circle");
 var circle2 = document.getElementById("id_circle2");
 
-circle1.addEventListener("touchmove", on_touch_move);
+circle.addEventListener("touchmove", on_touch_move);
 circle2.addEventListener("touchmove", on_touch_move);
 
 var svg = document.getElementById("id_svg");
