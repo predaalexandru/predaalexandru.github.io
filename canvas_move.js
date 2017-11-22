@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.22.4";
+document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.22.5";
 
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
@@ -18,9 +18,10 @@ img.onload = function() {
 }
 
 canvas.addEventListener("touchmove", on_touch_move);
+canvas.addEventListener("touchstart", on_touch_start);
 
 //-------------------------------------------------------------
-function on_touch_move(e)
+function on_touch_start(e)
 {
 	e.preventDefault();
 	var touches = e.changedTouches;
@@ -30,9 +31,22 @@ function on_touch_move(e)
 		  touches[i].pageY - rect_canvas.top < top_y + img_height && touches[i].pageY - rect_canvas.top >= top_y) {
 			var offset_inside_image_x = (touches[i].pageX - rect_canvas.left) - top_x; 
 			var offset_inside_image_y = (touches[i].pageY - rect_canvas.top) - top_y; 
+			
+		}
+	}
+}
+//---------------------------------------------------------
+function on_touch_move(e)
+{
+	e.preventDefault();
+	var touches = e.changedTouches;
+	for (var i=0; i < touches.length; i++) 
+	{
+		if(touches[i].pageX - rect_canvas.left < top_x + img_width && touches[i].pageX - rect_canvas.left >= top_x &&
+		  touches[i].pageY - rect_canvas.top < top_y + img_height && touches[i].pageY - rect_canvas.top >= top_y) {
 			context.clearRect(0, 0, 400, 300);
-			top_x = touches[i].pageX - offset_inside_image_x;
-			top_y = touches[i].pageY - offset_inside_image_y;
+			top_x = touches[i].pageX - rect_canvas.left - offset_inside_image_x;
+			top_y = touches[i].pageY - rect_canvas.top - offset_inside_image_y;
 			context.drawImage(img, top_x, top_y, img_width, img_height);
 			
 		}
