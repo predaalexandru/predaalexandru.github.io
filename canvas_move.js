@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.22.5";
+document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.22.6";
 
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
@@ -19,6 +19,9 @@ img.onload = function() {
 
 canvas.addEventListener("touchmove", on_touch_move);
 canvas.addEventListener("touchstart", on_touch_start);
+
+var offset_inside_image_x;
+var offset_inside_image_y;
 
 //-------------------------------------------------------------
 function on_touch_start(e)
