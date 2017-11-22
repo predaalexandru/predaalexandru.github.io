@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.22.2";
+document.getElementById("id_logic_level_version").innerHTML="Business level version 2017.11.22.3";
 
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
@@ -28,9 +28,11 @@ function on_touch_move(e)
 	{
 		if(touches[i].pageX - rect_canvas.left < top_x + img_width && touches[i].pageX - rect_canvas.left >= top_x &&
 		  touches[i].pageY - rect_canvas.top < top_y + img_height && touches[i].pageY - rect_canvas.top >= top_y) {
+			var offset_inside_image_x = top_x - (touches[i].pageX - rect_canvas.left); 
+			var offset_inside_image_y = top_y - (touches[i].pageY - rect_canvas.top); 
 			context.clearRect(0, 0, 400, 300);
-			top_x = touches[i].pageX - rect_canvas.left;
-			top_y = touches[i].pageY - rect_canvas.top;
+			top_x = touches[i].pageX - offset_inside_image_x;
+			top_y = touches[i].pageY - offset_inside_image_y;
 			context.drawImage(img, top_x, top_y, img_width, img_height);
 			
 		}
