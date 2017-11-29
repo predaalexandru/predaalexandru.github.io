@@ -1,4 +1,4 @@
-document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.29.2"; 
+document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.29.4"; 
 //window.addEventListener('deviceorientation', ondeviceorientation);
 window.addEventListener('devicemotion', ondevicemotion);
 
@@ -6,11 +6,11 @@ window.addEventListener('devicemotion', ondevicemotion);
 var gamma = 0;
 var beta = 0;
 
-setInterval(deseneaza_cerc_canvas, 40);
+setInterval(deseneaza_cerc_canvas, 40, gamma, beta);
 
 
 //----------------------------------------
-function deseneaza_cerc_canvas()
+function deseneaza_cerc_canvas(gamma, beta)
 {
 	var canvas = document.getElementById("id_canvas");
 	var context = canvas.getContext("2d");
