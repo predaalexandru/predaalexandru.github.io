@@ -3,7 +3,7 @@ document.getElementById("id_logic_level_version").innerHTML = "Business level ve
 document.addEventListener("touchstart", on_touch_start);
 
 var recognition = new webkitSpeechRecognition();
-recognition.lang = "en-US";
+recognition.lang = "ro-RO";
 recognition.onresult = on_speech_result;
 recognition.onsoundend = on_sound_end;
 
