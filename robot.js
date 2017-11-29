@@ -1,9 +1,10 @@
-document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.29.0"; 
+document.getElementById("id_logic_level_version").innerHTML = "Business level version: 2017.11.29.1"; 
 
 document.addEventListener("touchstart", on_touch_start);
 
 var recognition = new webkitSpeechRecognition();
 recognition.lang = "en-US";
+recognition.maxAlternatives = 1;
 recognition.onresult = on_speech_result;
 recognition.onsoundend = on_sound_end;
 
