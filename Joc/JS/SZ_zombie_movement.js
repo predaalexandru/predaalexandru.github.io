@@ -86,7 +86,7 @@ function SZ_animateZombie(whichOne) {
 						scalex_zombie[whichOne-1] = xx;
 						var i=0;
 						while(i<6) {
-							if(scalex_zombie[whichOne-1] > scalex_zombie[i] && ($(this).zIndex() < $("#zombie"+(i+1)).zIndex()) && scalex_zombie[i] =0) {
+							if(scalex_zombie[whichOne-1] > scalex_zombie[i] && ($(this).zIndex() < $("#zombie"+(i+1)).zIndex()) && scalex_zombie[i] !=0) {
 								var i_index = $("#zombie"+(i+1)).zIndex();
 								$("#zombie"+(i+1)).css("z-index", $(this).css("z-index"));
 								$(this).css("z-index", i_index);
