@@ -37,7 +37,14 @@ function SZ_createZombie(whichOne) {
 	$("#zombie"+whichOne).bind('mousedown touchstart', function(e) {
 		if($("#zombie"+whichOne).css('opacity')!=0 && $("#SZ2").css('opacity')!=1){
 			fireGun(event);
-			zombieHit(whichOne-1);
+			if($("#zombie"+whichOne).css('opacity') !=0){
+				zombieHit(whichOne-1);
+			}
+		}
+	});
+	$("#bubble_zombie"+whichOne).bind('mousedown touchstart', function (e) {
+		if($("#SZ2").css('opacity') !=1) {
+			fireGun(event);
 		}
 	});
 }
