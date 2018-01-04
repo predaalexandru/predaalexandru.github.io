@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SZ Game</title>
+	<link rel="stylesheet" href="CSS/SZ_style.css">
+</head>
+<body>
+	<div id="SZ_maincontent">
+		<img id="SZ0" src="Images/SZ_background_image.jpg" onmousemove="rotateGun(event)" onmousedown="fireGun(event)" alt="Background" />
+		<div id="SZ1"></div>
+		<div id="SZ2">
+			<img src="Images/SZ_reload.png" onmousedown="reloadGun(event)" alt="Reload" />
+		</div>
+		<div id="SZ3">
+			<img src="Images/SZ_score.png" alt="Score" />
+		</div>
+	</div>
+	
+	<script src="JS/jquery.js"></script>
+	<script src="JS/jquery-ui.js"></script>
+	<script src="JS/SZ_main.js"></script>
+	<script src="JS/SZ_setupContent.js"></script>
+	<script src="JS/SZ_movement.js"></script>
+	<script src="JS/ss.js"></script>
+	<script src="JS/SZ_SS.js"></script>
+	<script src="JS/SZ_touch.js"></script>
+	<script src="JS/SZ_zombie_movement.js"></script>
+</body>
+</html>
