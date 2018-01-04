@@ -32,9 +32,9 @@ function SZ_createZombie(whichOne) {
 	
 	//Ascundem zombie-ul la inceput
 	$("#bubble_zombie"+whichOne).css('transform','scale('+0+')');
-	$("#zombie"+whichOne).css("z-index", whichOne+100);
-	$("#bubble_zombie"+whichOne).css("z-index", whichOne);
-	$("#SZ1").css("z-index",200);
+	//$("#zombie"+whichOne).css("z-index", whichOne+100);
+	//$("#bubble_zombie"+whichOne).css("z-index", whichOne);
+	//$("#SZ1").css("z-index",200);
 	
 	//cand facem click pe zombie
 	$("#zombie"+whichOne).bind('mousedown touchstart', function(e) {
@@ -101,7 +101,7 @@ function SZ_animateZombie(whichOne) {
 	});
 }
 
-var zindex_current = 0;
+//var zindex_current = 0;
 
 function SZ_resetZombie(whichOne, zombieBubble_generate) {
 	
@@ -134,8 +134,8 @@ function SZ_resetZombie(whichOne, zombieBubble_generate) {
 	//repozitionare zombie
 	$zombiex.css({top: top_position+'px', left: left_position+'px', opacity:0});
 	
-	zindex_current++;
-	$("#zombie"+whichOne).css("z-index" zindex_current);
+	//zindex_current++;
+	//$("#zombie"+whichOne).css("z-index" zindex_current);
 	
 	SZ_animateZombie(whichOne);
 }
