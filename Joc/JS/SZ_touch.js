@@ -12,7 +12,7 @@ function reloadGun(e) {
 	}
 }
 //numarul maxim de trageri
-var max_shots=5;
+var max_shots=7;
 var current_shots=0;
 
 //Functie trage arma
