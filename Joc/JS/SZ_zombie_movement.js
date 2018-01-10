@@ -84,7 +84,7 @@ function SZ_animateZombie(whichOne) {
 				}
 					if(xx > 15) {
 						$(this).stop();
-						SZ_resetZombie(whichOne,0);
+						//SZ_resetZombie(whichOne,0);
 						$(this).css({opacity:0});
 						$(this).stop(true, true);
 						$(this).finish();
