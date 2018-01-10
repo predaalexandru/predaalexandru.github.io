@@ -8,10 +8,12 @@ function rotateGun(e) {
 
 //Function pentru zombie
 function bubbleZombie_flyAway(whichOne) {
+	current_score++;
+	updateScore();
 	//asignam un nume pentru div
 	var $zombiex = $("#bubble_zombie"+whichOne);
 	$zombiex.animate({
-		top: "-="+100*ratio+ "px",
+		top: "-="+50*ratio+ "px",
 	}, {
 		easing: "easeOutElastic",
 		duration: 400,
@@ -27,7 +29,7 @@ function bubbleZombie_flyAway(whichOne) {
 						$(this).css('transform', 'scale('+xx+')');
 					}
 				}, complete: function() {
-					
+					SZ_animateZombie(whichOne);
 				}//sfarsit complete function
 			}); //sfarsit a doua animatie
 		}//sfarsit complete function
