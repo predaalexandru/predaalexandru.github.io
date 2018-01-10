@@ -30,6 +30,7 @@ img {
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	opacity: 0;
 }
 
 #SZ2 {
@@ -44,4 +45,12 @@ img {
 	position: fixed;
 	top: 0;
 	right: 0;
+	opacity: 0;
+}
+
+#SZ4 {
+	position: fixed;
+	cursor: pointer;
+	background-size: cover;
+	opacity: 0;
 }

@@ -35,6 +35,7 @@ function SZ_createZombie(whichOne) {
 	//$("#zombie"+whichOne).css("z-index", whichOne+100);
 	//$("#bubble_zombie"+whichOne).css("z-index", whichOne);
 	//$("#SZ1").css("z-index",200);
+	$('#SZ4').css("z-index", 201);
 	
 	//cand facem click pe zombie
 	$("#zombie"+whichOne).bind('mousedown touchstart', function(e) {
@@ -78,9 +79,18 @@ function SZ_animateZombie(whichOne) {
 		step: function(now, fx) {
 			if(fx.prop == "left") {
 				var xx = (fx.pos)*16;
+				if(gameEnded==1) {
+					xx = 999;
+				}
 					if(xx > 15) {
 						$(this).stop();
 						SZ_resetZombie(whichOne,0);
+						$(this).css({opacity:0});
+						$(this).stop(true, true);
+						$(this).finish();
+						if(gameEnded==0 && xx! = 999) {
+							start_end_game(1);
+						}
 					} else {
 						$(this).css('transform','scale('+xx+')');
 						scalex_zombie[whichOne-1] = xx;
@@ -136,6 +146,7 @@ function SZ_resetZombie(whichOne, zombieBubble_generate) {
 	
 	//zindex_current++;
 	//$("#zombie"+whichOne).css("z-index" zindex_current);
-	
-	SZ_animateZombie(whichOne);
+	if(zombieBubble_generate==0) {
+		SZ_animateZombie(whichOne);	
+	}
 }

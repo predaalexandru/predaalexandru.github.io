@@ -17,7 +17,7 @@ var current_shots=0;
 
 //Functie trage arma
 function fireGun(e) {
-	if(canIclick==0 && $("#SZ2").css('opacity') != 1) {
+	if(canIclick==0 && gameEnded==0 && $("#SZ2").css('opacity') != 1) {
 		canIclick = 1;
 		$("#SZ1").animateSprite("play", "fire");
 		//incrementam tragerile
