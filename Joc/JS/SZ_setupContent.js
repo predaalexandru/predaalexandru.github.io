@@ -52,10 +52,10 @@ function start_end_game(whichOne) {
 		$('#bubble_zombie_'+i).css({opacity:0});
 	}
 	if(whichOne==0){
-		$('#SZ4').css('background-image', 'url(images/splash_intro.png)');
+		$('#SZ4').css('background-image', 'url(Images/splash_intro.png)');
 	} else {
 		$('#SZ3').css({opacity:1});
-		$('#SZ4').css('background-image','url(images/splash_gameover.png)');
+		$('#SZ4').css('background-image','url(Images/splash_gameover.png)');
 	}
 
 	$('#SZ4').css('top', ($(window).height()/2)-((701 * ratio_use)/2));
