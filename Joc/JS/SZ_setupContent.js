@@ -1,6 +1,21 @@
 var ratio_use = ratio;
 //functia principala
 function main_call_setupContent() {
+	$('#SZ_maincontent').css('width', 600 * ratio);
+	$('#SZ_maincontent').css('height', 400 * ratio);
+
+	$('#SZ_maincontent').css('left',($(window).width()/2)-((600 * ratio)/2));
+	$('#SZ_maincontent').css('top',($(window).height()/2)-((400 * ratio)/2));
+	
+	$('#box1').css('width', 631 * ratio);
+	$('#box1').css('height', 457 * ratio);
+	$('#box1').css('left', ($(window).width()/2)-((637 * ratio)/2));
+	$('#box1').css('top', ($(window).height()/2)-((457 * ratio)/2));
+	
+	$('#logo').css('width', 400 * ratio);
+	$('#logo').css('height', 146 * ratio);
+	$('#logo').css('left', 0);
+	$('#logo').css('top', 0);
 	//Arma
 	$('#SZ1').css('width', 150 * ratio);
 	$('#SZ1').css('height', 150 * ratio);
@@ -21,10 +36,11 @@ function main_call_setupContent() {
 		ratio_use = $(window).height() / 800;
 	}
 	
-	$('#SZ4').css('width', 868 * ratio_use);
-	$('#SZ4').css('height', 701 * ratio_use);
-	$('#SZ4').css('left', ($(window).width() / 2) - ((868 * ratio_use) / 2));
-	$('#SZ4').css('top', ($(window).height() / 2) - ((701 * ratio_use) / 2));
+	$('#SZ4').css('width', 458 * ratio);
+	$('#SZ4').css('height', 370 * ratio);
+	$('#SZ4').css('left', 71 * ratio);
+	$('#SZ4').css('left', ($(window).width()/2)-((600 * ratio_use)/2));
+	$('#SZ4').css('top', ($(window).height()/2)-((400 * ratio_use)/2));
 	
 	$('#textx').css('width', '100%');
 	$('#textx').css('height', '50%');
@@ -57,8 +73,9 @@ function start_end_game(whichOne) {
 		$('#SZ3').css({opacity:1});
 		$('#SZ4').css('background-image','url(Images/splash_gameover.png)');
 	}
+	$('#SZ4').css('top',0);
 
-	$('#SZ4').css('top', ($(window).height()/2)-((701 * ratio_use)/2));
+	//$('#SZ4').css('top', ($(window).height()/2)-((701 * ratio_use)/2));
 	
 	$('#SZ4').css({opacity:1});
 	gameEnded= 1;

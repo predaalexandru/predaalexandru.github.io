@@ -4,9 +4,9 @@ function SZ_createZombie(whichOne) {
 	var div2 = document.createElement('div');
 	var div3 = document.createElement('div');
 	
-	div.setAttribute('style', 'position: fixed; top:0, left:0;')
-	div2.setAttribute('style', 'position: fixed; top:0; left:0;')
-	div3.setAttribute('style', 'position: fixed; top:0; left:0;')
+	div.setAttribute('style', 'position: fixed; top:0; left:0; opacity:0; position: absolute; display: inherit;');
+	div2.setAttribute('style', 'position: fixed; top:0; left:0; position: absolute;');
+	div3.setAttribute('style', 'position: fixed; top:0; left:0; position: absolute;');
 	
 	var top_position = $('#SZ0').height() * 0.435;
 	
@@ -29,8 +29,10 @@ function SZ_createZombie(whichOne) {
 	div3.id = 'zombie_effect' + whichOne;
 	
 	//afisare pe ecran
-	document.body.appendChild(div);
-	document.body.appendChild(div2);
+	//document.body.appendChild(div);
+	$('#SZ_maincontent').append(div);
+	//document.body.appendChild(div2);
+	$('#SZ_maincontent').append(div2);
 	document.body.appendChild(div3);
 	
 	setup_zombie_SS(whichOne);
