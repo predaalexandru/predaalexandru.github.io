@@ -38,8 +38,7 @@ function zombieHit(whichOne) {
 	zombieHits_counter[whichOne]++;
 	
 	if(zombieHits_counter[whichOne] >= zombieHits_limits[whichOne]) {
-		SZ_resetZombie(whichOne+1);
-		
+		//SZ_resetZombie(whichOne+1);
 		//Reset
 		SZ_resetZombie(whichOne+1,1);
 	}
