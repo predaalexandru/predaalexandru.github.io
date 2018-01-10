@@ -9,6 +9,7 @@ function reloadGun(e) {
 		current_shots=0;
 		//ascundem butonul de reload
 		$("#SZ2").css({opacity:0});
+		$.playSound('sounds/reload');
 	}
 }
 //numarul maxim de trageri
@@ -22,6 +23,7 @@ function fireGun(e) {
 		$("#SZ1").animateSprite("play", "fire");
 		//incrementam tragerile
 		current_shots++;
+		$.playSound('sounds/fire');
 		if(current_shots >= max_shots) {
 			//afisam butonul de reload
 			$("#SZ2").css({opacity:1});
