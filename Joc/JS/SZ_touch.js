@@ -34,7 +34,7 @@ var zombieHits_counter = [0,0,0,0,0,0];
 
 var zombieHits_limits = [2,1,3,2,1,3];
 
-function zombieHit(whichOne) {
+function zombieHit(whichOne, xx, yy) {
 	zombieHits_counter[whichOne]++;
 	
 	if(zombieHits_counter[whichOne] >= zombieHits_limits[whichOne]) {
@@ -42,4 +42,9 @@ function zombieHit(whichOne) {
 		//Reset
 		SZ_resetZombie(whichOne+1,1);
 	}
+	var whichOne2=whichOne+1;
+	var $effect_zombiex = $("#zombie_effect"+whichOne2);
+	$effect_zombiex.css({top: yy+'px', left: xx+'px', opacity:1});
+	$effect_zombiex.animateSprite("play", "z1");
+	$effect_zombiex.css('transform','scale('+scalex_zombie[whichOne]+')');
 }

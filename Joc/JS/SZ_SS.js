@@ -66,4 +66,19 @@ function setup_zombie_SS(whichOne){
 				//alert("Animation End");
 			}
 		});
+	
+	setup_SpriteSheet("#zombie_effect"+whichOne,"Images/SZ_effect_ss.png",4,13,15);
+	$("#zombie_effect"+whichOne).animateSprite({
+		fps: 10,
+		animations: {
+			z1: [0,1,2,3],
+		},
+		duration: 20,
+		loop: false,
+		complete: function () {
+		'loop: false'
+		//alert("animation End");
+		$("#zombie_effect"+whichOne).css({opacity:0});
+		}
+	});
 }

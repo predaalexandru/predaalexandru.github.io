@@ -2,9 +2,11 @@
 function SZ_createZombie(whichOne) {
 	var div = document.createElement('div');
 	var div2 = document.createElement('div');
+	var div3 = document.createElement('div');
 	
 	div.setAttribute('style', 'position: fixed; top:0, left:0;')
 	div2.setAttribute('style', 'position: fixed; top:0; left:0;')
+	div3.setAttribute('style', 'position: fixed; top:0; left:0;')
 	
 	var top_position = $('#SZ0').height() * 0.435;
 	
@@ -19,12 +21,17 @@ function SZ_createZombie(whichOne) {
 	div2.style.left = left_position + 'px';
 	div2.style.top = top_position + 'px';
 	
+	div3.style.left = left_position + 'px';
+	div3.style.top = top_position + 'px';
+	
 	div.id = 'zombie' + whichOne;
 	div2.id = 'bubble_zombie' + whichOne;
+	div3.id = 'zombie_effect' + whichOne;
 	
 	//afisare pe ecran
 	document.body.appendChild(div);
 	document.body.appendChild(div2);
+	document.body.appendChild(div3);
 	
 	setup_zombie_SS(whichOne);
 	
@@ -32,8 +39,10 @@ function SZ_createZombie(whichOne) {
 	
 	//Ascundem zombie-ul la inceput
 	$("#bubble_zombie"+whichOne).css('transform','scale('+0+')');
+	$("#zombie_effect"+whichOne).css( 'pointer-events', 'none' );
 	$("#zombie"+whichOne).css("z-index", whichOne+100);
 	$("#bubble_zombie"+whichOne).css("z-index", whichOne);
+	$("#zombie_effect"+whichOne).css("z-index", whichOne+150);
 	$("#SZ1").css("z-index",200);
 	$('#SZ4').css("z-index", 201);
 	
@@ -42,7 +51,8 @@ function SZ_createZombie(whichOne) {
 		if($("#SZ2").css('opacity')!=1){
 			fireGun(event);
 			if($("#zombie"+whichOne).css('opacity') !=0){
-				zombieHit(whichOne-1);
+				var offset = $(this).offset();
+				zombieHit(whichOne-1, e.pageX, e.pageY);
 			}
 		}
 	});
